@@ -1,15 +1,11 @@
 {
-  "name": "@extend-chrome/ts-react-boilerplate",
-  "version": "1.0.0",
+  "name": "Perfume prices on Fragrantica",
+  "version": "0.2.0",
   "private": true,
-  "description": "Chrome extension boilerplate with TypeScript and React",
+  "description": "Add perfume prices on Fragrantica page",
   "keywords": [
-    "chrome-extension",
-    "web-extension",
-    "typescript",
-    "react",
-    "rollup",
-    "boilerplate"
+    "perfumehub",
+    "fragrantica"
   ],
   "homepage": "https://github.com/extend-chrome/ts-react-boilerplate#readme",
   "bugs": {
@@ -20,7 +16,7 @@
     "url": "git+https://github.com/extend-chrome/ts-react-boilerplate.git"
   },
   "license": "MIT",
-  "author": "Jack Steam<jacksteamdev@gmail.com>",
+  "author": "Piotr Rugala<piotr@isedo.pl>",
   "scripts": {
     "build": "rollup -c",
     "release": "cross-env NODE_ENV=production rollup -c",
@@ -33,6 +29,8 @@
     "@types/firefox-webext-browser": "^82.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@vespaiach/axios-fetch-adapter": "^0.3.1",
+    "axios": "^1.1.3",
     "prettier": "^2.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -41,7 +39,8 @@
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.1",
     "@rollup/plugin-commonjs": "^17.0.0",
-    "@rollup/plugin-node-resolve": "^11.0.1",
+    "@rollup/plugin-json": "^5.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-typescript": "^8.1.0",
     "@types/jest": "^26.0.19",
     "@typescript-eslint/eslint-plugin": "^4.10.0",

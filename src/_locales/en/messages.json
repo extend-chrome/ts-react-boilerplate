@@ -1,0 +1,47 @@
+{
+  "ext_name": {
+    "message": "Perfume prices on Fragrantica"
+  },
+  "ext_description": {
+    "message": "Display perfume prices on Fragrantica"
+  },
+  "source": {
+    "message": "Source"
+  },
+  "hide_prices": {
+    "message": "Hide prices"
+  },
+  "show_prices": {
+    "message": "Show prices"
+  },
+  "soon": {
+    "message": "Configuration in progress"
+  },
+  "Toilet_water": {
+    "message": "Toilet water"
+  },
+  "Aftershave": {
+    "message": "Aftershave"
+  },
+  "Perfume_water": {
+    "message": "Perfume water"
+  },
+  "Perfume": {
+    "message": "Perfume"
+  },
+  "Cologne": {
+    "message": "Cologne"
+  },
+  "tester": {
+    "message": "Tester"
+  },
+  "set": {
+    "message": "Set"
+  },
+  "size": {
+    "message": "Size"
+  },
+  "price": {
+    "message": "Price"
+  }
+}

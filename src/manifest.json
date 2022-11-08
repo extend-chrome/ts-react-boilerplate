@@ -1,10 +1,36 @@
 {
-  "background": { "scripts": ["background/index.ts"] },
+  "name": "__MSG_ext_name__",
+  "description": "__MSG_ext_description__",
   "content_scripts": [
     {
-      "js": ["content/index.ts"],
-      "matches": ["https://*/*", "http://*/*"]
+      "js": [
+        "content/index.tsx"
+      ],
+      "matches": [
+        "https://www.fragrantica.pl/perfumy/*",
+        "https://www.fragrantica.com/perfume/*"
+      ]
     }
   ],
-  "browser_action": { "default_popup": "pages/popup/index.html" }
+  "action": {
+    "default_popup": "pages/popup/index.html",
+    "default_icon": {
+      "16": "images/icon.png",
+      "32": "images/icon.png",
+      "48": "images/icon.png",
+      "128": "images/icon.png",
+      "256": "images/icon.png"
+    }
+  },
+  "host_permissions": [
+    "https://perfumehub.pl/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["_locales/*.json"],
+      "matches": ["https://www.fragrantica.pl/*", "https://www.fragrantica.com/*"]
+    }
+  ],
+  "default_locale": "pl",
+  "manifest_version": 3
 }

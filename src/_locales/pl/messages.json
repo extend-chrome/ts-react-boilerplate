@@ -1,0 +1,47 @@
+{
+  "ext_name": {
+    "message": "Ceny perfum na Fragrantica"
+  },
+  "ext_description": {
+    "message": "Wyświetlanie cen perfum na stronach perfum na Fragrantica"
+  },
+  "source": {
+    "message": "Źródło"
+  },
+  "hide_prices": {
+    "message": "Ukryj ceny"
+  },
+  "show_prices": {
+    "message": "Pokaż ceny"
+  },
+  "soon": {
+    "message": "Konfiguracja w przygotowaniu"
+  },
+  "Toilet_water": {
+    "message": "Woda toaletowa"
+  },
+  "Aftershave": {
+    "message": "Woda po goleniu"
+  },
+  "Perfume_water": {
+    "message": "Woda perfumowana"
+  },
+  "Perfume": {
+    "message": "Perfum"
+  },
+  "Cologne": {
+    "message": "Woda kolońska"
+  },
+  "tester": {
+    "message": "Tester"
+  },
+  "set": {
+    "message": "Zestaw"
+  },
+  "size": {
+    "message": "Wielkość"
+  },
+  "price": {
+    "message": "Cena"
+  }
+}
