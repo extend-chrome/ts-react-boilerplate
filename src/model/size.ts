@@ -7,4 +7,8 @@ export class Size {
     price: number
     priceChange: number
     prices: Price[]
+    brand: string
+    line: string
+    type: string
+    gender: string
 }

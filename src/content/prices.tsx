@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Perfumehub} from "../provider/perfumehub";
 import {Data} from "../model/data";
+import PriceHistory from "./price-history";
 
 const Prices = () => {
   const [prices, setPrices] = useState(new Data())
@@ -32,7 +33,7 @@ const Prices = () => {
                       return (
                           <tr key={j}>
                             <td>{size.size} ml {size.tester && <span>{chrome.i18n.getMessage("tester")}</span>} {size.set && <span>{chrome.i18n.getMessage("set")}</span>}</td>
-                            <td>{size.price} {provider.getCurrency()} {size.priceChange != 0 && <span style={{color: size.priceChange > 0 ? 'red' : 'green'}}>{size.priceChange.toFixed(2)}%</span>}</td>
+                            <td>{size.price} {provider.getCurrency()} {size.priceChange != 0 && <span style={{color: size.priceChange > 0 ? 'red' : 'green'}}>{size.priceChange.toFixed(2)}%</span>} <span style={{float: "right"}}><PriceHistory searchData={size}/></span></td>
                           </tr>
                       )
                     })}

@@ -43,5 +43,8 @@
   },
   "price": {
     "message": "Cena"
+  },
+  "price_history": {
+    "message": "Historia cen"
   }
 }
