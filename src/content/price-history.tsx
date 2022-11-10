@@ -1,107 +1,32 @@
-import React, { useEffect, useState } from "react";
-import { Perfumehub } from "../provider/perfumehub";
+import React from "react";
 import { AiOutlineLineChart, AiOutlineCloseCircle } from "react-icons/ai";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-  TimeScale,
-} from 'chart.js'
-import { Line } from 'react-chartjs-2'
-import 'chartjs-adapter-date-fns';
-
-
 import Modal from 'react-modal';
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  TimeScale,
-  Title,
-  Tooltip,
-  Legend,
-
-)
+import PriceHistoryChart from "./price-history-chart";
+import {Size} from "../model/size";
 
 const customStyles = {
   content: {
-    // top: '50%',
-    // left: '50%',
-    // right: 'auto',
     bottom: 'auto',
-    // marginRight: '-50%',
-    // transform: 'translate(-50%, -50%)',
   },
   overlay: { zIndex: 1000 }
 };
 
+interface PriceHistoryProps {
+  searchData: Size
+}
+
 Modal.setAppElement('#app');
 
-const PriceHistory = (props: any) => {
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-  const provider = new Perfumehub
-  let graphData: any;
+const PriceHistory: React.FC<PriceHistoryProps>= (props) => {
+  const [modalIsOpen, setModalIsOpen] = React.useState(false);
 
   function openModal() {
-    setIsOpen(true);
+    setModalIsOpen(true);
   }
-
-  useEffect(() => {
-    provider.getPriceHistory(props.searchData)
-      .then((response) => {
-        data.datasets[0].data = response;
-        setData(data)
-      }
-      )
-  }, [])
 
   function closeModal() {
-    setIsOpen(false);
+    setModalIsOpen(false);
   }
-
-  const options = {
-    responsive: true,
-    type: 'line',
-    plugins: {
-      tooltip: {
-        callbacks: {
-          label: function (context: any) {
-            return context.raw.price + provider.getCurrency() + ' ' + context.raw.shopNameReal;
-          }
-        }
-      }
-    },
-    parsing: {
-      xAxisKey: 'date',
-      yAxisKey: 'price'
-    },
-    scales: {
-      x: {
-        type: 'time',
-        time: {
-          unit: 'day'
-        }
-      }
-    }
-
-  };
-
-  const [data, setData] = useState({
-    datasets: [{
-      label: chrome.i18n.getMessage("price_history"),
-      data: graphData,
-      borderColor: '#63bbff',
-      backgroundColor: '#63bbff',
-    },]
-  })
-
 
   return (
     <span>
@@ -110,12 +35,10 @@ const PriceHistory = (props: any) => {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel="Example Modal"
       >
         <button style={{ float: "right" }} onClick={closeModal}><AiOutlineCloseCircle /></button>
-
         <div style={{ width: "auto" }}>
-          <Line options={options} data={data} />
+          <PriceHistoryChart searchData={props.searchData} />
         </div>
       </Modal>
     </span>
